@@ -30,3 +30,18 @@ if (meuPresidente) {
     console.log("Estocar vento");
 }
 
+// CONVERSÃO DE DADOS NO JS
+let numero1 = 1;
+let numeroString1 = String(numero1);
+console.log(numero1, numeroString1);
+
+let stringNumero2 = "2";
+let numero2 = Number(stringNumero2);
+console.log(stringNumero2, numero2);
+
+let numeroToString = numero1.toString();
+console.log(numeroToString);
+
+let stringToNumero = Number.parseInt(stringNumero2);
+console.log(stringToNumero);
+
