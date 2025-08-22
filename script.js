@@ -45,3 +45,8 @@ console.log(numeroToString);
 let stringToNumero = Number.parseInt(stringNumero2);
 console.log(stringToNumero);
 
+// Estruturas de repetição
+for (let i = 0; i < 4; i++) {
+    console.log(i);
+}
+
