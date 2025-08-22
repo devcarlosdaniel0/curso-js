@@ -50,3 +50,23 @@ for (let i = 0; i < 4; i++) {
     console.log(i);
 }
 
+// funções
+let balance = 100
+
+function withdrawal(balance, value) {
+    let can = verifiyIfCanWiwithdrawal(balance, value)
+
+    let errorMessage = `Cant withdrawal, your balance is lower than value. Balance: ${balance} attempt: ${value}`;
+
+    return can ? balance -= value : errorMessage;
+}
+
+function verifiyIfCanWiwithdrawal(balance, value) {
+    if (balance < value) {
+        return false;
+    }
+    return true;
+}
+
+let result = withdrawal(balance, 90);
+console.log(result);
