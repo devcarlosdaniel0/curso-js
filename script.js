@@ -13,3 +13,20 @@ let isMaiorIdade = idade >= 18
 
 console.log(isMaiorIdade);
 
+// Nulls e Undefined
+
+let mundialPalmeiras = null;
+let meuPresidente;
+
+if (mundialPalmeiras) {
+    console.log("Verdão");
+} else {
+    console.log("Bora Mengão!!!");
+}
+
+if (meuPresidente) {
+    console.log("Plano nacional");
+} else {
+    console.log("Estocar vento");
+}
+
