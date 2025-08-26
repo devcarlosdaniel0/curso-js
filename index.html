@@ -6,14 +6,28 @@
     <title>Document</title>
     <!-- <script src="script-basico.js"></script> -->
     <!-- <script src="script-dom.js" defer></script> -->
-     <script src="scrip-oop.js" defer></script>
+    <!-- <script src="scrip-oop.js" defer></script> -->
+    <script src="scrip-events.js"></script>
   </head>
   <body>
     <h1>Hello from Javascript</h1>
     <p>I'd prefer Java</p>
 
-    <p id="texto"></p>
+    <p id="text"></p>
 
-    <button onclick="helloPeople()"></button>
+    <div
+      style="
+        margin: auto auto;
+        width: 500px;
+        height: 300px;
+        background-color: blue;
+      "
+      id="div"
+      onmouseover="turnRed()"
+      onmouseleave="turnBlue()"
+      
+    ></div>
+
+
   </body>
 </html>
