@@ -9,6 +9,7 @@
     <script src="scrip-oop.js" defer></script>
     <script src="scrip-events.js"></script>
     <script src="intervals.js"></script>
+    <script src="jsons.js"></script>
     <style>
       button {
         width: 50px;
@@ -37,5 +38,12 @@
 
     <button id="start" onclick="startCounting()">start</button>
     <button id="stop" onclick="stopCounting()">stop</button>
+
+    <br>
+    <br>
+
+    <input type="number" placeholder="Digite seu cep" id="inputCEP"> 
+    <button onclick="searchCEP()">buscar</button>
+    <p id="cepText"></p>
   </body>
 </html>
