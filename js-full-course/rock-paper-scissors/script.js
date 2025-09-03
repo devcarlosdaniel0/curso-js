@@ -1,10 +1,8 @@
-const score = {
+let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
   ties: 0,
 };
-
-let result = "";
 
 function randomComputerChoice() {
   const moves = ["rock", "paper", "scissors"];
@@ -15,6 +13,7 @@ function randomComputerChoice() {
 
 function play(playerOption) {
   let computerOption = randomComputerChoice();
+  let result = "";
 
   const possibleResults = {
     rock: { win: "scissors" },
@@ -33,14 +32,10 @@ function play(playerOption) {
     score.losses += 1;
   }
 
-  document.getElementById("result-text").innerHTML = result;
-  displayResult();
-}
+  localStorage.setItem("score", JSON.stringify(score));
 
-function displayResult() {
-  document.getElementById("ties").innerHTML = score.ties;
-  document.getElementById("wins").innerHTML = score.wins;
-  document.getElementById("losses").innerHTML = score.losses;
+  document.getElementById("result-text").innerHTML = result;
+  displayScore();
 }
 
 function resetScore() {
@@ -48,5 +43,13 @@ function resetScore() {
   score.losses = 0;
   score.ties = 0;
 
-  displayResult();
+  localStorage.removeItem("score");
+
+  displayScore();
+}
+
+function displayScore() {
+  document.getElementById("ties").innerHTML = score.ties;
+  document.getElementById("wins").innerHTML = score.wins;
+  document.getElementById("losses").innerHTML = score.losses;
 }
