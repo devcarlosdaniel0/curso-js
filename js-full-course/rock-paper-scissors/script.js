@@ -1,6 +1,9 @@
-let wins = 0;
-let losses = 0;
-let ties = 0;
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
 let result = "";
 
 function randomComputerChoice() {
@@ -21,17 +24,29 @@ function play(playerOption) {
 
   if (playerOption === computerOption) {
     result = "Tie.";
-    ties += 1;
+    score.ties += 1;
   } else if (possibleResults[playerOption].win === computerOption) {
     result = "You Win.";
-    wins += 1;
+    score.wins += 1;
   } else {
     result = "You lose.";
-    losses += 1;
+    score.losses += 1;
   }
 
   document.getElementById("result-text").innerHTML = result;
-  document.getElementById("ties").innerHTML = ties;
-  document.getElementById("wins").innerHTML = wins;
-  document.getElementById("losses").innerHTML = losses;
+  displayResult();
+}
+
+function displayResult() {
+  document.getElementById("ties").innerHTML = score.ties;
+  document.getElementById("wins").innerHTML = score.wins;
+  document.getElementById("losses").innerHTML = score.losses;
+}
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+
+  displayResult();
 }
