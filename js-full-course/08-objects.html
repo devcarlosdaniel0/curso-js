@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "Iphone 16",
+        price: 500,
+        rating: {
+          stars: 4.5,
+          count: 43,
+        },
+        fun: function f1() {
+          console.log("Fucking hot dogs!");
+        },
+      };
+
+      const json = JSON.stringify(product);
+      console.log(json);
+
+      const jsonParsed = JSON.parse(json);
+      console.log(jsonParsed);
+      console.log(typeof jsonParsed);
+    </script>
+  </body>
+</html>
