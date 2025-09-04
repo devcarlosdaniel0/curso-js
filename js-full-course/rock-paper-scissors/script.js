@@ -35,6 +35,7 @@ function play(playerOption) {
   localStorage.setItem("score", JSON.stringify(score));
 
   document.getElementById("result-text").innerHTML = result;
+  document.getElementById("result-selected").innerHTML = `You: ${playerOption} <br> Computer: ${computerOption}`
   displayScore();
 }
 
@@ -43,6 +44,8 @@ function resetScore() {
   score.losses = 0;
   score.ties = 0;
 
+  document.getElementById("result-text").innerHTML = "";
+  document.getElementById("result-selected").innerHTML = ""
   localStorage.removeItem("score");
 
   displayScore();
