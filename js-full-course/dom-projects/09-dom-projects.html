@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Youtube subscribe button</p>
+    <button onclick="subscribeBtn()" class="btn-subscribe">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of order" class="cost-input" onkeydown="calculateTotalWhenEnterKeyPressed()"/>
+    <button onclick="calculateTotal()">Calculate</button>
+    <p id="result-tax"></p>
+
+    <script>
+      function calculateTotalWhenEnterKeyPressed() {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        let inputTxt = document.querySelector(".cost-input");
+
+        let inputNum = parseInt(inputTxt.value);
+
+        inputNum < 40 ? (inputNum += 10) : inputNum;
+
+        let result = document.getElementById("result-tax");
+        result.innerHTML = inputNum;
+      }
+
+      function subscribeBtn() {
+        let btn = document.querySelector(".btn-subscribe");
+
+        btn.innerHTML === "Subscribe"
+          ? (btn.innerHTML = "Subscribed")
+          : (btn.innerHTML = "Subscribe");
+      }
+    </script>
+  </body>
+</html>
