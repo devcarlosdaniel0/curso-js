@@ -68,7 +68,8 @@ h1 {
     min-height: 40px; 
 }
 
-.reset-button {
+.reset-button, 
+.auto-play-button {
     background-color: #4a90e2;
     border: none;
     border-radius: 10px;
@@ -81,6 +82,7 @@ h1 {
     cursor: pointer;
 }
 
-.reset-button:hover {
+.reset-button:hover,
+.auto-play-button:hover {
     background-color: #0b386a;
 }
