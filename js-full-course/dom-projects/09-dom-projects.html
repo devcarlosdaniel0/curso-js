@@ -4,14 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .btn-subscribe {
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 15px 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribe {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculateBtn {
+        background-color: green;
+        border: none;
+        color: white;
+        font-size: 15px;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
     <p>Youtube subscribe button</p>
     <button onclick="subscribeBtn()" class="btn-subscribe">Subscribe</button>
 
     <p>Amazon Shipping Calculator</p>
-    <input type="text" placeholder="Cost of order" class="cost-input" onkeydown="calculateTotalWhenEnterKeyPressed()"/>
-    <button onclick="calculateTotal()">Calculate</button>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      class="cost-input"
+      onkeydown="calculateTotalWhenEnterKeyPressed()"
+    />
+    <button onclick="calculateTotal()" class="calculateBtn">Calculate</button>
     <p id="result-tax"></p>
 
     <script>
@@ -35,9 +75,13 @@
       function subscribeBtn() {
         let btn = document.querySelector(".btn-subscribe");
 
-        btn.innerHTML === "Subscribe"
-          ? (btn.innerHTML = "Subscribed")
-          : (btn.innerHTML = "Subscribe");
+        if (btn.innerHTML === "Subscribe") {
+          btn.innerHTML = "Subscribed";
+          btn.classList.add("is-subscribe");
+        } else {
+          btn.innerHTML = "Subscribe";
+          btn.classList.remove("is-subscribe");
+        }
       }
     </script>
   </body>
