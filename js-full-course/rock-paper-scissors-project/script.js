@@ -58,7 +58,7 @@ let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerOption = randomComputerChoice();
       play(playerOption);
     }, 1000);
