@@ -3,7 +3,7 @@ const todoList = [];
 function renderTodoList() {
   let todoListHTML = "";
 
-  todoList.forEach(function(todoObject, index) {
+  todoList.forEach(function (todoObject, index) {
     const { name, date } = todoObject;
 
     const html = `
@@ -12,10 +12,14 @@ function renderTodoList() {
                     <button onclick="deleteTodo(${index})">Delete</button> 
                     `;
     todoListHTML += html;
-  })
+  });
 
   document.querySelector(".todo-list-area").innerHTML = todoListHTML;
 }
+
+document.querySelector(".add-btn").addEventListener("click", () => {
+  addTodo();
+});
 
 function addTodo() {
   const inputTextElement = document.querySelector(".input-text");
@@ -35,6 +39,10 @@ function addTodo() {
     renderTodoList();
   }
 }
+
+document.querySelector(".input-text").addEventListener("keydown", () => {
+  addTodoWhenEnterPressed(event);
+})
 
 function addTodoWhenEnterPressed(event) {
   if (event.key === "Enter") {

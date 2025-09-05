@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body onload="displayScore()">
+  <body>
     <div class="game-container">
-        <h1>Rock, Paper, Scissors</h1>
+      <h1>Rock, Paper, Scissors</h1>
 
-        <div class="score-board">
-            <p>Wins: <span id="wins">0</span></p>
-            <p>Losses: <span id="losses">0</span></p>
-            <p>Ties: <span id="ties">0</span></p>
-        </div>
+      <div class="score-board">
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Ties: <span id="ties">0</span></p>
+      </div>
 
-        <div class="buttons-container">
-            <button class="choice-button" onclick="play('rock')">🪨</button>
-            <button class="choice-button" onclick="play('paper')">📄</button>
-            <button class="choice-button" onclick="play('scissors')">✂️</button>
-        </div>
+      <div class="buttons-container">
+        <button class="choice-button rock-btn">🪨</button>
+        <button class="choice-button paper-btn">📄</button>
+        <button class="choice-button scissors-btn">✂️</button>
+      </div>
 
-        <div class="result-container">
-            <p id="result-text"></p>
-            <p id="result-selected"></p>
-        </div>
+      <div class="result-container">
+        <p id="result-text"></p>
+        <p id="result-selected"></p>
+      </div>
 
-        <button class="reset-button" id="reset-btn" onclick="resetScore()">Reset Score</button>
-        <button class="auto-play-button" onclick="autoPlay()">Auto play</button>
+      <button class="reset-button" id="reset-btn">Reset Score</button>
+      <button class="auto-play-button">Auto play</button>
     </div>
 
     <script src="script.js" defer></script>
-</body>
-
+  </body>
 </html>

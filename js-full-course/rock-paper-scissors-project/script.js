@@ -1,3 +1,39 @@
+window.onload = () => {
+  displayScore();
+};
+
+document.querySelector(".rock-btn").addEventListener("click", () => {
+  play("rock");
+});
+
+document.querySelector(".paper-btn").addEventListener("click", () => {
+  play("paper");
+});
+
+document.querySelector(".scissors-btn").addEventListener("click", () => {
+  play("scissors");
+});
+
+document.querySelector(".reset-button").addEventListener("click", () => {
+  resetScore();
+});
+
+document.querySelector(".auto-play-button").addEventListener("click", () => {
+  autoPlay();
+});
+
+document.body.addEventListener("keydown", (event) => {
+  const moves = { 
+    r: "rock", 
+    p: "paper", 
+    s: "scissors" 
+  };
+  
+  if (moves[event.key]) {
+    play(moves[event.key]);
+  }
+});
+
 let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
