@@ -3,18 +3,16 @@ const todoList = [];
 function renderTodoList() {
   let todoListHTML = "";
 
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
-
+  todoList.forEach(function(todoObject, index) {
     const { name, date } = todoObject;
 
     const html = `
                     <div>${name}</div> 
                     <div>${date} </div> 
-                    <button onclick="deleteTodo(${i})">Delete</button> 
+                    <button onclick="deleteTodo(${index})">Delete</button> 
                     `;
     todoListHTML += html;
-  }
+  })
 
   document.querySelector(".todo-list-area").innerHTML = todoListHTML;
 }
