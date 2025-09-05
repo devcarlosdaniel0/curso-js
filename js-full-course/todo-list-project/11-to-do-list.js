@@ -9,12 +9,18 @@ function renderTodoList() {
     const html = `
                     <div>${name}</div> 
                     <div>${date} </div> 
-                    <button onclick="deleteTodo(${index})">Delete</button> 
+                    <button class="delete-btn">Delete</button> 
                     `;
     todoListHTML += html;
   });
 
   document.querySelector(".todo-list-area").innerHTML = todoListHTML;
+
+  document.querySelectorAll(".delete-btn").forEach((deleteButton, index) => {
+    deleteButton.addEventListener("click", () => {
+      deleteTodo(index)
+    })
+  });
 }
 
 document.querySelector(".add-btn").addEventListener("click", () => {
