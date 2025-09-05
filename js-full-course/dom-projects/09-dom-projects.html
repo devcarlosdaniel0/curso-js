@@ -49,13 +49,13 @@
       type="text"
       placeholder="Cost of order"
       class="cost-input"
-      onkeydown="calculateTotalWhenEnterKeyPressed()"
+      onkeydown="calculateTotalWhenEnterKeyPressed(event)"
     />
     <button onclick="calculateTotal()" class="calculateBtn">Calculate</button>
     <p id="result-tax"></p>
 
     <script>
-      function calculateTotalWhenEnterKeyPressed() {
+      function calculateTotalWhenEnterKeyPressed(event) {
         if (event.key === "Enter") {
           calculateTotal();
         }

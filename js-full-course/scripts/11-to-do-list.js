@@ -1,0 +1,50 @@
+const todoList = [];
+
+function renderTodoList() {
+  let todoListHTML = "";
+
+  for (let i = 0; i < todoList.length; i++) {
+    const todoObject = todoList[i];
+
+    const { name, date } = todoObject;
+
+    const html = `
+                    <div>${name}</div> 
+                    <div>${date} </div> 
+                    <button onclick="deleteTodo(${i})">Delete</button> 
+                    `;
+    todoListHTML += html;
+  }
+
+  document.querySelector(".todo-list-area").innerHTML = todoListHTML;
+}
+
+function addTodo() {
+  const inputTextElement = document.querySelector(".input-text");
+  const inputDateElement = document.querySelector(".input-date");
+
+  const name = inputTextElement.value;
+  const date = inputDateElement.value;
+
+  if (name && date) {
+    todoList.push({
+      name,
+      date,
+    });
+
+    inputTextElement.value = "";
+
+    renderTodoList();
+  }
+}
+
+function addTodoWhenEnterPressed(event) {
+  if (event.key === "Enter") {
+    addTodo();
+  }
+}
+
+function deleteTodo(i) {
+  todoList.splice(i, 1);
+  renderTodoList();
+}
