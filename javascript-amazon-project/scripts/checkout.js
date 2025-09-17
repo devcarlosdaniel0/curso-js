@@ -5,6 +5,8 @@ import { removeFromCart } from "../data/cart.js";
 import { deliveryOptions } from "../data/deliveryOptions.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 
+import "../backend/backend-pratice.js";
+
 let cartSummaryHTML = "";
 
 cart.forEach((cartItem) => {
